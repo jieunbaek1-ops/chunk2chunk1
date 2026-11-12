@@ -1063,7 +1063,7 @@ function saveGKey() {
   const k = $('#gkey-in').value.trim();
   const m = $('#gmodel-in').value.trim() || 'gemini-2.5-flash';
   if (k) {
-    if (!/^AIza[0-9A-Za-z_-]{20,}$/.test(k)) { gmsg('키 형식이 맞지 않아요. AI Studio에서 복사한 키인지 확인하세요.', 'bad'); return; }
+    if (!/^[A-Za-z0-9._-]{20,200}$/.test(k)) { gmsg('키 형식이 맞지 않아요. AI Studio에서 복사한 키를 공백 없이 붙여넣었는지 확인하세요.', 'bad'); return; }
     localStorage.setItem(GKEY, k);
   }
   if (!localStorage.getItem(GKEY)) { gmsg('키를 입력해 주세요.', 'bad'); return; }

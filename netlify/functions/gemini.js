@@ -7,7 +7,7 @@ const json = (code, obj) => ({
   headers: { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' },
   body: JSON.stringify(obj)
 });
-const KEY_RE = /^AIza[0-9A-Za-z_-]{20,}$/;
+const KEY_RE = /^[A-Za-z0-9._-]{20,200}$/;
 const MODEL_RE = /^[a-z0-9][a-z0-9.\-]{2,60}$/i;
 
 exports.handler = async (event) => {
